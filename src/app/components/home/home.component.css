@@ -176,7 +176,7 @@ a{
   .image{
       width: 10%;
       height: auto;
-      float: left;
+      /* float: left; */
       margin-right: 3%;
   }
 
