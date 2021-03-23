@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "stav-project": {
+      "hosting": {
+        "my-resume": [
+          "stav-project"
+        ]
+      }
+    }
+  }
+}

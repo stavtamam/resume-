@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&family=PT+Sans:ital@0;1&display=swap');
+
+body{
+    background-color: #565264;
+    color: white;
+    font-family: 'PT Sans', sans-serif;
+}
