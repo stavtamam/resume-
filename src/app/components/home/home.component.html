@@ -1,45 +1,27 @@
 <div class="home" id="home">
-    <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1052&q=80"
-        alt="computer programing" class="center" id="border">
+    <div class="img"></div>
     <h1 class="centered" id="head"></h1>
-    <!-- <h1 class="centered" id="head"></h1> -->
-
 </div>
-
 <section id="project">
     <hr class="breaker first">
     <h1 class="projects">Projects</h1>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-1">
-                <a class="float-left controler" id="leftArrow">
-                    <span class="carousel-control-prev-icon carousel-control" aria-hidden="true"
-                        (click)="controlerPrev()"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-            </div>
-            <div class="col-10 ">
-                <div class="grid-container scroller" id="outerWrapper">
-                    <div class="grid-item" *ngFor='let project of projects' (click)="getProject(project.id,$event)"
-                        data-toggle="modal" data-target="#projects">
-                        <div class="insta-highlight">
-                            <i class="{{project.icon}} fa-5x"></i>
+    <br>
+    <owl-carousel-o [options]="slideOptions">
+        <ng-template carouselSlide *ngFor='let project of projects'>
+            <div class="" (click)="getProject(project.id,$event)" data-toggle="modal" data-target="#projects">
+                <div class="item slide">
+                    <div class="content">
+                        <div class="content-overlay"></div>
+                        <img class="content-image" src="{{project.img}}">
+                        <div class="content-details fadeIn-bottom">
+                            <h3 class="content-title">{{project.name}}</h3>
+                            <p class="content-text"><i class="{{project.icon}}"></i></p>
                         </div>
-                        <span>{{project.name}}</span>
                     </div>
                 </div>
             </div>
-            <div class="col-1">
-
-                <a class="float-right controler" id="rightArrow">
-                    <span class="carousel-control-next-icon carousel-control" aria-hidden="true"
-                        (click)="controlerNext()"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-        </div>
-    </div>
+        </ng-template>
+    </owl-carousel-o>
 
 
 </section>
@@ -49,17 +31,18 @@
     <h1>About</h1>
     <br>
     <div class="about-div row">
-        <div class="image col-2">
+        <div class="image col-3">
             <img src="https://scontent.ftlv6-1.fna.fbcdn.net/v/t1.0-9/43952766_10218147208579581_5138674571456544768_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=2mnYHE31mJUAX-F5lU2&_nc_ht=scontent.ftlv6-1.fna&oh=a9c63cbb2121754402466b7150b9425d&oe=607B0AC9"
                 alt="" class="about">
         </div>
-        <div class="content col-9">
+        <div style="text-align: left;" class="contentAbout col-9">
             <span><strong><em>Hi, I'm Stav. Nice to meet you!</em></strong></span><br>
             <span>I design and code beautifully simple things, and I love what I do.</span>
             <hr class="saperater">
             <span>I like to code things from scratch, and enjoy bringing ideas to life in the browser. <br> I'm queitly
                 confident, naturally curious, and constantly working on improving myself.<br>
-                skills can be taught, personality is inherent. I prefer to keep learning, <br>
+                I honestly think that skills can be taught, but personality is inherent, and I prefer to keep learning,
+                <br>
                 continue challenging myself, and do intresting things that matter. <br>
 
             </span><br>
@@ -74,7 +57,9 @@
     <section id="contact"><br>
         <hr class="breaker second">
         <h1>Contact Me</h1>
-        <br><br><br>
+
+        <br><br><br><br><br><br><br>
+
     </section>
 </div>
 <div class="modal fade" id="projects" tabindex="-1" role="dialog" aria-labelledby="projects" aria-hidden="true">
@@ -87,7 +72,16 @@
                 </button>
             </div>
             <div class="modal-body">
-                <iframe [src]="urlSafe" frameborder="0" width="100%" height="420"></iframe>
+                <h6>Some details:</h6>
+                <p>{{project.description}}</p>
+                <h6>Languages used in project:</h6>
+                <ul>
+                    <li *ngFor='let lang of project.langs'><i class="fas fa-star-of-life"></i>
+                        {{lang | titlecase}}</li>
+                </ul>
+                <a href="{{project.url}}" target="_blank" class="btn">Check me out
+                    <i class="fas fa-angle-double-right fa-sm"></i></a>
+                <!-- <iframe [src]="urlSafe" frameborder="0" width="100%" height="420"></iframe> -->
             </div>
         </div>
     </div>

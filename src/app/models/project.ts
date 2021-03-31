@@ -2,5 +2,8 @@ export interface Project {
     id?: string,
     name: string,
     icon: string,
-    url: string
+    url: string,
+    img: string,
+    description: string,
+    langs: []
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectsService } from '../../services/projects.service';
 import { Project } from '../../models/project';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 declare var $: any;
 
 @Component({
@@ -16,8 +17,12 @@ export class HomeComponent implements OnInit {
   project: Project = {
     name: "",
     icon: "",
-    url: ""
+    url: "",
+    img: "",
+    description: "",
+    langs: []
   };
+
 
 
   constructor(private ps: ProjectsService, private sanitizer: DomSanitizer) { }
@@ -27,6 +32,7 @@ export class HomeComponent implements OnInit {
       this.projects = projects;
       this.projectsC = projects;
       // console.log(projects);
+
     })
 
 
@@ -60,16 +66,33 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  controlerNext() {
-    $("#rightArrow").click(function () {
-      $('#outerWrapper').animate({ scrollLeft: '+=460' }, 1000)
-    });
+
+  slideOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: false,
+    center: true,
+    dots: false,
+    margin: 10,
+    animateIn: true,
+    navSpeed: 600,
+    navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+    nav: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 1
+      },
+      760: {
+        items: 3
+      },
+      1000: {
+        items: 4
+      }
+    },
+
   }
 
-  controlerPrev() {
-    $("#leftArrow").click(function () {
-      $('#outerWrapper').animate({ scrollLeft: '-=460' }, 1000)
-    });
-  }
-  onLoad() { }
+
 }
