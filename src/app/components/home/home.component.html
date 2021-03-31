@@ -53,7 +53,7 @@
         <h1>Skills</h1>
     </div>
 </section>
-<div style="background-color: #735D78;">
+<div>
     <section id="contact"><br>
         <hr class="breaker second">
         <h1>Contact Me</h1>
@@ -72,12 +72,12 @@
                 </button>
             </div>
             <div class="modal-body">
-                <h6>Some details:</h6>
+                <h6>Project details:</h6>
                 <p>{{project.description}}</p>
                 <h6>Languages used in project:</h6>
                 <ul>
                     <li *ngFor='let lang of project.langs'><i class="fas fa-star-of-life"></i>
-                        {{lang | titlecase}}</li>
+                        {{lang | uppercase}}</li>
                 </ul>
                 <a href="{{project.url}}" target="_blank" class="btn">Check me out
                     <i class="fas fa-angle-double-right fa-sm"></i></a>

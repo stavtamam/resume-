@@ -17,6 +17,7 @@
 
 .centered{
     position: absolute;
+    color: white;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -66,15 +67,18 @@ hr.breaker:after {
     padding: 0 0.25em;
     color: white;
     font-family: 'Fascinate', cursive;
-    background:#735D78;
+    background: #3482fb;
+    border-radius: 10%;
 }
 
 hr.first:after{
-    background: #565264;
+    color: white;
+    background: #77acee;
 }
 
 hr.second:after{
-    background: #D1B3C4;
+    color: white;
+    background: #4f48c5;
 }
 
 h1{
@@ -83,7 +87,7 @@ h1{
 }
 
 a{
-    background-color: #565264;
+    background-color: #A092B0;
     color: white;
     float: right;
     transition: 0.4s;
@@ -114,7 +118,7 @@ li{
 #about{
     padding-top: 2em;
     padding-bottom: 26%;
-    background-color: #735D78;
+    /* background-color: #90809B; */
     border-top-right-radius: 1em;
     border-top-left-radius: 1em;
 }
@@ -153,12 +157,12 @@ li{
   }
   h1{
       margin-top: 1em;
-      text-shadow: 0 0 5px #E8C2CA,0 0 5px #735D78;
+      text-shadow: 0 0 5px #E8C2CA,0 0 5px #90809B;
   }
 
 
 #contact{
-background-color: #D1B3C4;
+/* background-color: #D1B3C4; */
 border-top-right-radius: 1em;
 border-top-left-radius: 1em;
 }
