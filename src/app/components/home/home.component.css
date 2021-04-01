@@ -41,6 +41,7 @@ hr.breaker {
     width: 80%;
     overflow: visible;
     height: 30px;
+    margin: auto;
     border-style: solid;
     border-color: white;
     border-width: 1px 0 0 0;
@@ -67,6 +68,7 @@ hr.breaker:after {
     padding: 0 0.25em;
     color: white;
     font-family: 'Fascinate', cursive;
+    /* background: #3482fb; */
     background: #3482fb;
     border-radius: 10%;
 }
@@ -84,6 +86,8 @@ hr.second:after{
 h1{
     font-family: 'Fascinate', cursive;
     text-align: center; 
+    margin-top: 1em;
+    text-shadow: 2px 2px 5px #E8C2CA,2px 2px 5px #A6808C;
 }
 
 a{
@@ -117,8 +121,7 @@ li{
 
 #about{
     padding-top: 2em;
-    padding-bottom: 26%;
-    /* background-color: #90809B; */
+    /* padding-bottom: 26%; */
     border-top-right-radius: 1em;
     border-top-left-radius: 1em;
 }
@@ -146,8 +149,6 @@ li{
   .image{
       width: 10%;
       height: auto;
-      /* margin: 0 auto; */
-      /* margin-right: 3%; */
   }
 
   .skills{
@@ -155,10 +156,7 @@ li{
       padding: 1em;
       text-align: center;
   }
-  h1{
-      margin-top: 1em;
-      text-shadow: 0 0 5px #E8C2CA,0 0 5px #90809B;
-  }
+ 
 
 
 #contact{
@@ -174,6 +172,15 @@ border-top-left-radius: 1em;
     }
     img.about{
         width: 100%;
+    }
+    hr.breaker::after{
+        background: #4c3cba;
+    }
+    hr.first::after{
+        background: #7a74cb;
+    }
+    hr.second::after{
+        background: #580396;
     }
 }
 
@@ -264,12 +271,79 @@ img {
 
 /*sign*/
 
-.owl-theme .owl-controls .owl-page.active span .owl-prev .ng-star-inserted .fa-chevron-left{
-    background-color: red !important;
-    background: none !important;
+  .text {
+    text-shadow: 2px 2px 5px #E8C2CA,2px 2px 5px #A6808C;
+    font-family: 'Fascinate', cursive;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    list-style: none;
+    border-bottom: 0;
+  }
+  
+  .text li {
+    display: inline-block;
+    float: left;
+    font-weight: 700;
+    font-size: 3em;
+    color: #fff;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    max-width: 2em;
+  }
+  .text.hidden li.spaced {
+    padding-left: 0;
+  }
+  .text li.spaced {
+    padding-left: 0.5em;
+  }
+  
+  .text.hidden li.ghost {
+    opacity: 0;
+    max-width: 0;
+  }
+
+  /* progress bars */
+h2{
+    font-family: 'PT Sans', sans-serif;
 }
-.owl-nav{
-    background: red;
+
+  .progress-outer{
+    background: #fff;
+    border-radius: 50px;
+    padding: 8px;
+    margin: 10px 0;
+    box-shadow: 0 0  10px rgba(209, 219, 231,0.7);
+}
+.progress{
+    height: 27px;
+    margin: 0;
+    overflow: visible;
+    border-radius: 50px;
+    background: #eaedf3;
+    box-shadow: inset 0 10px  10px rgba(244, 245, 250,0.9);
+}
+.progress .progress-bar{
+    border-radius: 50px;
+}
+.progress .progress-value{
+    position: relative;
+    left: -45px;
+    top: 13px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 2px;
+}
+.progress-bar.active{
+    animation: reverse progress-bar-stripes 0.40s linear infinite, animate-positive 2s;
+}
+@-webkit-keyframes animate-positive{
+    0% { width: 0%; }
+}
+@keyframes animate-positive {
+    0% { width: 0%; }
 }
 
 

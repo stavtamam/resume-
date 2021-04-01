@@ -36,26 +36,19 @@ export class HomeComponent implements OnInit {
     })
 
 
-    let b = "Stav Tamam ";
-    let txt = b.split("");
-    $.each(txt, function (k, v) {
-      let a = document.createElement("b");
-      a.append(v);
-      $("b").hover(function () {
-        $(this).css({
-          "color": "white",
-          "textShadow": "0 0 5px #E8C2CA,0 0 5px #A6808C"
-        });
-      }, function () {
-        $(this).css({
-          "color": "white",
-          "textShadow": "0 0 0"
-        });
+    $(function () {
+      var text = $(".text");
+      $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 100) {
+          text.removeClass("hidden");
+        } else {
+          text.addClass("hidden");
+        }
       });
-      $("#head").append(a);
+    });
 
-
-    })
 
   }
 
