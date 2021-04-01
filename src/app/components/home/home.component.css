@@ -326,7 +326,7 @@ h2{
     0% { width: 0%; }
 }
 
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 800px){
 
     .about-div{
         width: 100%;
@@ -347,7 +347,7 @@ h2{
         left: 45%;
     }
     .text li{
-        font-size: 1.6em;
+        font-size: 1.5em;
     }
 }
 
