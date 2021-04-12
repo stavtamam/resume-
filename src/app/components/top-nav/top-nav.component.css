@@ -229,7 +229,7 @@
 
     .text{
       top: 100%;
-      left: 10%;
+      left: 12%;
       transition: all 0.5s ease-in-out;
   }
   .text li{
