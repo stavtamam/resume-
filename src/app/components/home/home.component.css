@@ -375,6 +375,9 @@ h2{
         margin-left: 0;
         margin-right: 0;
     }
+    .img{
+        background-position: center;
+    }
 
 }
 
