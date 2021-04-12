@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
 .img{
-    background-image: url("https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1052&q=80");
+    background-image: url("https://helloflo.com/wp-content/uploads/2016/03/shutterstock_322577240.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -27,7 +27,6 @@
 }
 strong{
     font-size: 25px;
-    /* font-family: 'Fascinate', cursive; */
 }
 #project{
     padding-top: 3em;
@@ -69,18 +68,22 @@ hr.breaker:after {
     color: white;
     font-family: 'Fascinate', cursive;
     /* background: #3482fb; */
-    background: #3482fb;
+    background: #564EC9;
     border-radius: 10%;
 }
 
 hr.first:after{
     color: white;
-    background: #77acee;
+    background: #77ACEE;
 }
 
 hr.second:after{
     color: white;
-    background: #4f48c5;
+    background: #5592F6;
+}
+hr.third:after{
+    color: white;
+    background: #3C6AEA;
 }
 
 h1{
@@ -152,9 +155,12 @@ li{
   }
 
   .skills{
-      margin-top: 2em;
-      padding: 1em;
+      /* margin-top: 2em; */
+      /* padding: 1em; */
       text-align: center;
+  }
+  #skills{
+      margin-bottom: 10%;
   }
  
 
@@ -249,41 +255,6 @@ img {
     top: 80%
 }
 
-/*sign*/
-
-  .text {
-    text-shadow: 2px 2px 5px #E8C2CA,2px 2px 5px #A6808C;
-    font-family: 'Fascinate', cursive;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    list-style: none;
-    border-bottom: 0;
-  }
-  
-  .text li {
-    display: inline-block;
-    /* float: left; */
-    font-weight: 700;
-    font-size: 2.9em;
-    color: #fff;
-    opacity: 1;
-    transition: all 0.5s ease-in-out;
-    max-width: 2em;
-  }
-  .text.hidden li.spaced {
-    padding-left: 0;
-  }
-  .text li.spaced {
-    padding-left: 0.4em;
-  }
-  
-  .text.hidden li.ghost {
-    opacity: 0;
-    max-width: 0;
-  }
-
   /* progress bars */
 h2{
     font-family: 'PT Sans', sans-serif;
@@ -326,6 +297,60 @@ h2{
     0% { width: 0%; }
 }
 
+/* form css */
+
+.form{
+    margin-left: 30em;
+    margin-right: 30em;
+    margin-bottom: 12em;
+}
+.c-input{
+    margin-top: 4em;
+}
+.input{
+    border: none;
+    background-color: transparent;
+    border-bottom: 1.5px solid #5bc0de;
+    color: #5bc0de;
+}
+.input:focus{
+    box-shadow: none;
+}
+.invalid-feedback{
+    color: white;
+}
+.submit{
+    float: right;
+    margin-top: 1em;
+    transition: 0.4s;
+    color: white;
+}
+.submit:hover{
+    border: 1px solid #5bc0de;
+    transform: scale(1.1);
+}
+.submit:focus , .submit:active {
+    box-shadow: none;
+    background-color: #5bc0de;
+    transition: 0s;
+    transform: scale(1);
+}
+
+::placeholder {
+    color: #5bc0de;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #5bc0de;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+   color: #5bc0de;
+  }
+
+/* media adjustments */
+
 @media only screen and (max-width: 800px){
 
     .about-div{
@@ -335,20 +360,22 @@ h2{
         width: 100%;
     }
     hr.breaker::after{
-        background: #4c3cba;
+        background: #59009B;
     }
     hr.first::after{
-        background: #7a74cb;
+        background: #8E89BF;
     }
     hr.second::after{
-        background: #580396;
+        background: #6B61C4;
     }
-    .text{
-        left: 45%;
+    hr.third::after{
+        background: #533FC3;
     }
-    .text li{
-        font-size: 1.5em;
+    .form{
+        margin-left: 0;
+        margin-right: 0;
     }
+
 }
 
 

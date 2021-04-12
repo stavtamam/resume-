@@ -12,6 +12,19 @@ export class TopNavComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    $(function () {
+      var text = $(".text");
+      $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 200) {
+          text.addClass("hidden");
+        } else {
+          $('.letter').addClass('ghost')
+          text.removeClass("hidden");
+        }
+      });
+    });
   }
 
   scrollTo(target) {

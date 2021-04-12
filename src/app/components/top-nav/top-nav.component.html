@@ -2,7 +2,19 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg main-nav px-0">
             <a class="navbar-brand" href="/mojo">
-                <h1 class="logo">ST</h1>
+                <ul class="text">
+                    <li>S</li>
+                    <li class="letter">t</li>
+                    <li class="letter">a</li>
+                    <li class="letter">v</li>
+
+                    <li class="spaced">T</li>
+                    <li class="letter">a</li>
+                    <li class="letter">m</li>
+                    <li class="letter">a</li>
+                    <li class="letter">m</li>
+                </ul>
+                <!-- <h1 class="logo"></h1> -->
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu"
                 aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,10 +30,13 @@
                             class="active active-first">home</a>
                     </li>
                     <li>
+                        <a (click)="scrollTo('about')" class="smoothscroll" routerLinkActive="active">about</a>
+                    </li>
+                    <li>
                         <a (click)="scrollTo('project')" class="smoothscroll" routerLinkActive="active">projects</a>
                     </li>
                     <li>
-                        <a (click)="scrollTo('about')" class="smoothscroll" routerLinkActive="active">about</a>
+                        <a (click)="scrollTo('skills')" class="smoothscroll" routerLinkActive="active">skills</a>
                     </li>
                     <li>
                         <a (click)="scrollTo('contact')" class="smoothscroll" routerLinkActive="active">contact</a>

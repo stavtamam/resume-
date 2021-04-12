@@ -3,13 +3,6 @@
     position: relative;
     z-index: 999;
   }
-
-  .logo{
-    font-family: 'Fascinate', cursive;
-  }
-  .logo:hover{
-    text-shadow: 0 0 5px #E8C2CA,0 0 5px #A6808C;
-  }
   
   #mainMenu li > a {
     font-size: 12px;
@@ -19,6 +12,7 @@
     position: relative;
     z-index: 1;
     text-decoration: none;
+    cursor: pointer;
   }
   
   .main-header.fixed-nav #mainMenu li > a {
@@ -98,6 +92,40 @@
   .main-header .navbar-brand img {
     max-width: 40px;
     animation: fadeInLeft 0.4s both 0.4s;
+  }
+
+  /* logo */
+  .text {
+    text-shadow: 2px 2px 5px #E8C2CA,2px 2px 5px #A6808C;
+    font-family: 'Fascinate', cursive;
+    position: absolute;
+    top: 55%;
+    left: 5%;
+    transform: translateX(-50%) translateY(-50%);
+    list-style: none;
+    border-bottom: 0;
+  }
+  
+  .text li {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 1.5em;
+    color: #fff;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    max-width: 2em;
+  }
+  .text li.spaced {
+     padding-left: 0.4em;
+   }
+  
+  .text.hidden li.spaced {
+    padding-left: 0;
+  }
+  
+  .text.hidden li.ghost {
+    opacity: 0;
+    max-width: 0;
   }
   
   /* main-header end */
@@ -198,5 +226,19 @@
     .main-header .navbar-toggler:focus .icon-bar {
       background-color: #fff;
     }
+
+    .text{
+      top: 100%;
+      left: 10%;
+      transition: all 0.5s ease-in-out;
+  }
+  .text li{
+      font-size: 1em;
+  }
+  .text.hidden{
+    position: absolute;
+    left: 0%;
+    transform: translateX(-50%) translateY(-50%);
+  }
   }
   

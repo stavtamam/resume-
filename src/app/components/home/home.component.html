@@ -1,21 +1,33 @@
 <div class="home" id="home">
-    <div class="img"></div>
     <!-- <h1 class="centered" id="head"></h1> -->
-    <ul class="text hidden">
-        <li>S</li>
-        <li class="ghost">t</li>
-        <li class="ghost">a</li>
-        <li class="ghost">v</li>
-
-        <li class="spaced">T</li>
-        <li class="ghost">a</li>
-        <li class="ghost">m</li>
-        <li class="ghost">a</li>
-        <li class="ghost">m</li>
-    </ul>
+    <div class="img"></div>
 </div>
-<section id="project">
+<section id="about"><br>
     <hr class="breaker first">
+    <h1>About</h1>
+    <br>
+    <div class="about-div row">
+        <div class="image col-3">
+            <img src="https://scontent.ftlv6-1.fna.fbcdn.net/v/t1.0-9/43952766_10218147208579581_5138674571456544768_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=2mnYHE31mJUAX-F5lU2&_nc_ht=scontent.ftlv6-1.fna&oh=a9c63cbb2121754402466b7150b9425d&oe=607B0AC9"
+                alt="" class="about">
+        </div>
+        <div style="text-align: left;" class="contentAbout col-9">
+            <span><strong><em>Hi, I'm Stav. Nice to meet you!</em></strong></span><br>
+            <span>I design and code beautifully simple things, and I love what I do.</span>
+            <hr class="saperater">
+            <span>I like to code things from scratch, and enjoy bringing ideas to life in the browser. <br> I'm queitly
+                confident, naturally curious, and constantly working on improving myself.<br>
+                I honestly think that skills can be taught, but personality is inherent, and I prefer to keep learning,
+                <br>
+                continue challenging myself, and do intresting things that matter. <br>
+
+            </span><br>
+
+        </div>
+    </div>
+</section>
+<section id="project">
+    <hr class="breaker second">
     <h1 class="projects">Projects</h1>
     <br>
     <owl-carousel-o [options]="slideOptions">
@@ -38,30 +50,9 @@
 
 </section>
 
-<section id="about"><br>
-    <hr class="breaker">
-    <h1>About</h1>
-    <br>
-    <div class="about-div row">
-        <div class="image col-3">
-            <img src="https://scontent.ftlv6-1.fna.fbcdn.net/v/t1.0-9/43952766_10218147208579581_5138674571456544768_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=2mnYHE31mJUAX-F5lU2&_nc_ht=scontent.ftlv6-1.fna&oh=a9c63cbb2121754402466b7150b9425d&oe=607B0AC9"
-                alt="" class="about">
-        </div>
-        <div style="text-align: left;" class="contentAbout col-9">
-            <span><strong><em>Hi, I'm Stav. Nice to meet you!</em></strong></span><br>
-            <span>I design and code beautifully simple things, and I love what I do.</span>
-            <hr class="saperater">
-            <span>I like to code things from scratch, and enjoy bringing ideas to life in the browser. <br> I'm queitly
-                confident, naturally curious, and constantly working on improving myself.<br>
-                I honestly think that skills can be taught, but personality is inherent, and I prefer to keep learning,
-                <br>
-                continue challenging myself, and do intresting things that matter. <br>
-
-            </span><br>
-
-        </div>
-    </div>
+<section id="skills"><br><br>
     <div class="skills">
+        <hr class="breaker third">
         <h1>Skills</h1>
         <div class="container">
 
@@ -149,27 +140,71 @@
 </section>
 <div>
     <section id="contact"><br>
-        <hr class="breaker second">
+        <hr class="breaker">
         <h1>Contact Me</h1>
+        <!-- sign -->
 
-        <br><br><br><br><br><br><br>
+        <div class="margin">
+            <div class="form">
+                <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+                    <div class="text-center c-input">
+                        <label for="name" class="sr-only">Full Name:</label>
+                        <input [(ngModel)]="name" type="text" id="name" name="name" placeholder="Full Name"
+                            class="form-control input" #cfn="ngModel" required minlength="4"
+                            [ngClass]="{'is-invalid': cfn.errors && cfn.touched}">
+                        <div [hidden]="!cfn.errors?.required" class="invalid-feedback">Full name is required
+                        </div>
+                        <div [hidden]="!cfn.errors?.minlength" class="invalid-feedback">Full name must required
+                            min 4
+                            chars
+                        </div>
+                    </div>
+                    <div class="text-center c-input">
+                        <label for="email" class="sr-only">Email:</label>
+                        <input [(ngModel)]="email" type="text" id="email" name="email" placeholder="Email"
+                            class="form-control input" #ce="ngModel" required email
+                            [ngClass]="{'is-invalid': ce.errors && ce.touched}">
+                        <div [hidden]="!ce.errors?.required" class="invalid-feedback">Email is required</div>
+                        <div [hidden]="!ce.errors?.email" class="invalid-feedback">Enter a valid Email address
+                        </div>
+                    </div>
+                    <div class="text-center c-input">
+                        <label for="msg" class="sr-only">Full Name:</label>
+                        <input [(ngModel)]="msg" type="text" id="msg" name="msg" placeholder="Your Message..."
+                            class="form-control input" #cm="ngModel" required minlength="4"
+                            [ngClass]="{'is-invalid': cm.errors && cm.touched}">
+                        <div [hidden]="!cm.errors?.required" class="invalid-feedback">Full name is required
+                        </div>
+                        <div [hidden]="!cm.errors?.minlength" class="invalid-feedback">Full name must required
+                            min 4
+                            chars
+                        </div>
+                    </div>
 
+                    <input [disabled]="!contactForm.form.valid" type="submit" name="submit" id="submit" value="Send"
+                        class="btn submit">
+                </form>
+            </div>
+        </div>
     </section>
 </div>
 <div class="modal fade" id="projects" tabindex="-1" role="dialog" aria-labelledby="projects" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="projects">{{project.name}}</h4>
+                <h3 class="modal-title" id="projects">{{project.name}}</h3>
                 <button type="button" class="btn btn-sm" data-dismiss="modal" aria-label="Close">
                     <i class="fas fa-times fa-2x x-icon"></i>
                 </button>
             </div>
             <div class="modal-body">
-                <h6>Project details:</h6>
-                <p>{{project.description}}</p>
-                <h6>Languages used in project:</h6>
-                <ul>
+                <span class="float-right">
+                    <p style="font-size: 13px;"><i class="fas fa-tag fa-xs"></i> {{project.tag}}</p>
+                </span>
+                <h5>Project Details</h5>
+                <p>{{project.description}}</p><br>
+                <h5>Languages/Frameworks Used</h5>
+                <ul style="padding-left: 10px">
                     <li *ngFor='let lang of project.langs'><i class="fas fa-star-of-life"></i>
                         {{lang | uppercase}}</li>
                 </ul>

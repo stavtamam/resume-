@@ -5,5 +5,6 @@ export interface Project {
     url: string,
     img: string,
     description: string,
+    tag: string,
     langs: []
 }

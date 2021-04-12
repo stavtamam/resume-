@@ -1,7 +1,20 @@
-p{
-        /* position: fixed;
-        left: 0;
-        bottom: 0; */
-        width: 100%;
+div{
+        width: 90%;
         text-align: center;
+        margin-bottom: 1em;
+        color: #5bc0de;
+}
+.social{
+        display: inline-block;
+        width: 70%;
+        margin: 0 auto;
+}
+img{
+        transition: 0.4s;
+}
+img:hover{
+        transform: scale(1.2);
+}
+#copy{
+        float: left;
 }

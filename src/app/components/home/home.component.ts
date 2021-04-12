@@ -3,6 +3,7 @@ import { ProjectsService } from '../../services/projects.service';
 import { Project } from '../../models/project';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+declare var Email: any;
 declare var $: any;
 
 @Component({
@@ -20,8 +21,12 @@ export class HomeComponent implements OnInit {
     url: "",
     img: "",
     description: "",
+    tag: "",
     langs: []
   };
+  name: string;
+  email: string;
+  msg: string;
 
 
 
@@ -35,19 +40,6 @@ export class HomeComponent implements OnInit {
 
     })
 
-
-    $(function () {
-      var text = $(".text");
-      $(window).scroll(function () {
-        var scroll = $(window).scrollTop();
-
-        if (scroll >= 100) {
-          text.removeClass("hidden");
-        } else {
-          text.addClass("hidden");
-        }
-      });
-    });
 
 
   }
@@ -85,6 +77,22 @@ export class HomeComponent implements OnInit {
       }
     },
 
+  }
+
+  onSubmit({ value, valid }: { value: { name, email, msg }, valid: boolean }) {
+    if (valid) {
+      Email.send({
+        SecureToken: 'a67df091-542f-4292-824b-0cc74cf679de',
+        To: 'stavtamam@gmail.com',
+        From: 'brunotamam@gmail.com',
+        Subject: `messsage from ${value.name}`,
+        Body: `<h1>Message from:</h1> <br>
+        <h3>Email:${value.email},</h3><br>
+        <h3>Name:${value.name},</h3><br><br>
+        <h5>${value.msg}</h5>`
+      }).then(message => { console.log(message), $(".submit").val("Sent!"); });
+      $(".submit").addClass('disabled');
+    }
   }
 
 

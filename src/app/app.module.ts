@@ -17,6 +17,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,7 @@ import { RouterModule } from '@angular/router';
     AngularFireAuthModule,
     AngularFirestoreModule,
     BrowserAnimationsModule,
-    CarouselModule
+    CarouselModule,
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
